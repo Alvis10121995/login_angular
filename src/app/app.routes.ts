@@ -9,7 +9,7 @@ import { DashComponent } from './dash/dash.component';
 
 export const routes: Routes = [
 
-    { path:' ',
+    { path:'',
     component:HomeComponent,
    },
     { path:'login',
