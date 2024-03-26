@@ -1,0 +1,24 @@
+<section class="bg-slate-500 h-screen flex justify-center items-center"> 
+     
+<div class="w-fit bg-slate-800 text-white text-center" >
+    
+    <p>register works!</p>
+
+
+
+<input class="m-5 text-black" type="text" placeholder="Ingrese usuario" [(ngModel)]="usuario" > <br>
+
+<input class="m-5 text-black" type="text" placeholder="Ingrese contraseña"  [(ngModel)]="Password" > <br>
+
+<input class="m-5 text-black" type="text" placeholder="Ingrese contraseña"    [(ngModel)]="Password2" > <br>
+
+
+<p> {{messagepass}} </p>
+<p> usuario {{usuario}} </p>
+<p> Password {{Password}} </p>
+ 
+
+ <button class="m-5 bg-black text-white"(click)="comparar()" > REGISTRAR</button>
+</div>
+
+</section>
