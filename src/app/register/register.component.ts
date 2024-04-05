@@ -31,7 +31,11 @@ constructor (public servicio:ServicioService) {}
       this.messagepass='Contraseñas no coinciden'   
    }else{
     this.messagepass='' 
-      this.servicio.createUser({"user":this.usuario,"pass":this.Password}).subscribe( e => console.log(e) )
+      this.servicio.createUser({"user":this.usuario,"pass":this.Password}).subscribe( 
+        
+        e => console.log(e) 
+        
+        )
    }
     
 
