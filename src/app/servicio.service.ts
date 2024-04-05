@@ -22,7 +22,7 @@ export class ServicioService {
 
   
     // creación de usuario local
-   return this.http.post('192.168.0.3:3000/registar',user)
+   return this.http.post('https://apiauthentication-xi.vercel.app/data',user)
 
   }
 
