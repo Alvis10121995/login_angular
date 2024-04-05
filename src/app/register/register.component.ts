@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ServicioService } from '../servicio.service';
 import { subscribe } from 'diagnostics_channel';
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -20,7 +20,7 @@ export class RegisterComponent {
 
   
 
-constructor (public servicio:ServicioService) {}
+constructor (public servicio:ServicioService,private router: Router) {}
 
 
 
@@ -33,7 +33,13 @@ constructor (public servicio:ServicioService) {}
     this.messagepass='' 
       this.servicio.createUser({"user":this.usuario,"pass":this.Password}).subscribe( 
         
-        e => console.log(e) 
+        e => { 
+
+          this.servicio.setCookies(e.token)
+          this.router.navigateByUrl('/dash')
+          console.log(e)
+
+        }   
         
         )
    }
