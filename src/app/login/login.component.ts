@@ -60,7 +60,7 @@ ngOnInit() {
 
     login(){
      
-      let user={'email':this.correo,'password':this.pass}
+      let user={'user':this.correo,'pass':this.pass}
       this.servicio.fetchData(user).subscribe(e => { 
                
                this.servicio.setCookies(e.token)
