@@ -32,13 +32,20 @@ ngOnInit() {
 
     console.log(" Token="+this.servicio.getCookies())
 
-    if(this.servicio.getCookies()==''){
+    if(!this.servicio.getCookies()){
        console.log("sin cokies")
 
+      }else{
+      const  token=this.servicio.getCookies()
+      this.servicio.validarToken(token).subscribe( 
+          
+        e => console.log("resultado"+e)
 
-    }else{
 
-      console.log("con cokies")
+
+      )
+
+
       this.router.navigateByUrl('/dash')
      }
 
