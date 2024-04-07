@@ -39,14 +39,25 @@ ngOnInit() {
       const  token=this.servicio.getCookies()
       this.servicio.validarToken(token).subscribe( 
           
-        e => console.log("resultado"+e.status)
+        (e) => {
+            if(e.status=='200'){
+              console.log("Token Valido")
+              this.router.navigateByUrl('/dash')
+            }else{
+              console.log("Token inValido")
+
+            }
+
+        }
+        
+        
 
 
 
       )
 
 
-      this.router.navigateByUrl('/dash')
+      
      }
 
 
