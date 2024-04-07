@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {data} from '../app/intefaces/interfaces'
 import { CookieService } from "ngx-cookie-service";
+import { Router } from "@angular/router";
 
 
 
@@ -11,7 +12,7 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class ServicioService {
 
-  constructor(private http: HttpClient , private cookie:CookieService) {}
+  constructor(private http: HttpClient , private cookie:CookieService,private router: Router) {}
 
   fetchData(user: any):Observable<any> {
      
@@ -34,6 +35,8 @@ export class ServicioService {
 
 
   validarToken(token:string):Observable<any>{
+
+
   
     const headers = new HttpHeaders({
       'Authorization': token, // Encabezado de autorización con un token JWT
@@ -62,6 +65,44 @@ export class ServicioService {
  
    }
  
+
+
+   verificar(){
+
+
+    if(!this.getCookies()){
+      console.log("sin cokies")
+
+     }else{
+     const  token=this.getCookies()
+     this.validarToken(token).subscribe( 
+         
+       (e) => {
+           if(e.status=='200'){
+             console.log("Token Valido")
+             this.router.navigateByUrl('/dash')
+           }else{
+             console.log("Token inValido")
+
+           }
+
+       }
+       
+       
+
+
+
+     )
+
+
+     
+    }
+
+
+
+
+   }
+
 
 
 

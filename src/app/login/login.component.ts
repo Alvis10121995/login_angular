@@ -30,36 +30,9 @@ export class LoginComponent {
 
 ngOnInit() {
 
-    console.log(" Token="+this.servicio.getCookies())
 
-    if(!this.servicio.getCookies()){
-       console.log("sin cokies")
-
-      }else{
-      const  token=this.servicio.getCookies()
-      this.servicio.validarToken(token).subscribe( 
-          
-        (e) => {
-            if(e.status=='200'){
-              console.log("Token Valido")
-              this.router.navigateByUrl('/dash')
-            }else{
-              console.log("Token inValido")
-
-            }
-
-        }
-        
-        
-
-
-
-      )
-
-
-      
-     }
-
+    
+ this.servicio.verificar()
 
     
  
