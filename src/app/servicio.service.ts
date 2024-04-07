@@ -44,7 +44,7 @@ export class ServicioService {
     const options = { headers: headers };
 
 
-   return this.http.post('https://apiauthentication-xi.vercel.app/verifytoken',options)
+   return this.http.get('https://apiauthentication-xi.vercel.app/verifytoken',options)
 
   }
 

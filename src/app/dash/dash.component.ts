@@ -24,7 +24,6 @@ ngOnInit() {
   if(this.servicio.getCookies()==''){
      console.log("sin cokies")
      this.router.navigateByUrl('/login')
-     console.log("id "+this.route2.snapshot.paramMap.get("id"))
      
 
   }else{
