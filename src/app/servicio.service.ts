@@ -71,8 +71,8 @@ export class ServicioService {
 
 
     if(!this.getCookies()){
-      console.log("sin cokies")
-
+      this.router.navigateByUrl('/login')
+      
      }else{
      const  token=this.getCookies()
      this.validarToken(token).subscribe( 
