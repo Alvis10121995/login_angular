@@ -37,7 +37,8 @@ constructor (public servicio:ServicioService,private router: Router) {}
 
           this.servicio.setCookies(e.token)
           this.router.navigateByUrl('/dash')
-          console.log(e)
+          // token
+          //console.log(e)
 
         }   
         
