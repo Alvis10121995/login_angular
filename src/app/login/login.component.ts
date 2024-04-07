@@ -39,7 +39,7 @@ ngOnInit() {
       const  token=this.servicio.getCookies()
       this.servicio.validarToken(token).subscribe( 
           
-        e => console.log("resultado"+e)
+        e => console.log("resultado"+e.status)
 
 
 
