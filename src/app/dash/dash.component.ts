@@ -19,21 +19,9 @@ export class DashComponent {
 
 ngOnInit() {
 
-  console.log(" Token="+this.servicio.getCookies())
-
-  if(this.servicio.getCookies()==''){
-     console.log("sin cokies")
-     this.router.navigateByUrl('/login')
-     
-
-  }else{
-
-    console.log("con cokies")
-    
-   }
 
    
-
+this.servicio.verificar()
 
   
 
