@@ -83,6 +83,7 @@ export class ServicioService {
              this.router.navigateByUrl('/dash')
            }else{
              console.log("Token inValido")
+             this.router.navigateByUrl('/login')
 
            }
 
